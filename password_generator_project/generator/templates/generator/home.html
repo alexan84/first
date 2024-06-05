@@ -1,32 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Генератор паролей</h1>
+{% extends 'generator/base.html' %}
+
+{% block content %}
+<h1>Генератор паролей</h1>
 <!--это path('password', views.password, name='password') указание пути-->
 <!--  в цикле получаем диапазон для пароля lst приходит с views
     и установим что бы список выводился всегда с цифры 12
     br это перенос строки-->
-    <form action="{% url 'password' %">
-        <p><select name="length">
-            {% for i in lst %}
-            {% if i == 12 %}
-            <option value="{{ i }}" selected>{{ i }}</option>
-            {% else %}
-            <option value="{{ i }}">{{ i }}</option>
-            {% endif %}
-            {% endfor %}
-        </select> Количество символов</p>
-<!--        <p>-->
-<!--            <input type="checkbox" name="uppercase"> Верхний регистр <br>-->
-<!--            <input type="checkbox" name="numbers"> Цифры <br>-->
-<!--            <input type="checkbox" name="special"> Спецсимволы-->
-<!--        </p>-->
+<!-- -->
+<form action="{% url 'password' %}">
+    <p><select name="length">  <!-- цифра в выпадающем списке в -->
+        {% for i in lst %}
+        {% if i == 12 %}
+        <option value="{{ i }}" selected>{{ i }}</option>
+        {% else %}
+        <option value="{{ i }}">{{ i }}</option>
+        {% endif %}
+        {% endfor %}
+    </select> Количество символов</p>
+    <p>
+        <input type="checkbox" name="uppercase"> Верхний регистр <br>
+        <input type="checkbox" name="numbers"> Цифры <br>
+        <input type="checkbox" name="special"> Спецсимволы
+    </p>
 
-        <input type="submit" value="Сгенерировать пароль">
-    </form>
-</body>
-</html>
+    <input type="submit" value="Сгенерировать пароль">
+
+</form>
+
+<form action="{% url 'infa' %}">
+<input type="submit" value="Правила создания пароля">
+</form>
+{% endblock %}

@@ -20,6 +20,8 @@ from generator import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),  # name резервирует имя для далнейшего применения в указании пути
-    path('password/', views.password, name='password'),  # эта функция связывает путь password/ с функцией-обработчиком views.password
+    path('', views.home, name="home"),  # name резервирует имя для дальнейшего применения в указании пути
+    path('password/', views.password, name="password"),  # эта функция связывает путь password/ с функцией-обработчиком views.password
+    path('infa/', views.infa, name="infa"),  #
+
 ]

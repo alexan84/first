@@ -1,0 +1,22 @@
+/*  */
+/* фон,шрифт, */
+body{
+    background: lightyellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* home и password ширина, вырвнивание сайта по центру */
+.container{
+    width: 400px;
+    margin: 0 auto;
+}
+/* home и password выравнивание текста в заголовках по центру */
+.contaner h1{
+    text-align: center;
+}
+/* форма и где генерируется пароль - фоновый цвет,отступы,не растягивание блока на всб страницу(не работает) */
+.container form, .container h2{
+    background: greenyellow;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
